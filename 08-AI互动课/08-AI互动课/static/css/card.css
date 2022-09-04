@@ -1,0 +1,42 @@
+@font-face {
+    font-family: '趣萌软糖体';
+    src:url(../font/字魂64号-萌趣软糖体.ttf);
+}
+
+*{
+    margin:0;
+    padding:0;
+
+}
+
+.card {
+    width:700px;
+    margin: 0 auto;
+    position:relative;
+    background-color:rgb(213, 48, 40);
+}
+
+.top-pic {
+    width:100%
+}
+
+.bottom {
+    padding: 0px 20px 30px 20px;
+}
+
+.content{
+    background-color:rgb(249, 238, 209);
+    min-height: 300px;
+    padding: 20px 100px 20px 100px;
+    font-family: '趣萌软糖体';
+    font-size: 30px;
+    color:rgb(213, 48, 40);
+}
+.content-info{
+    margin: 20px 0px;
+    text-indent:2em;
+}
+
+.send-name {
+    text-align: right;
+}

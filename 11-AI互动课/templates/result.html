@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>测试报告</title>
+    <link rel="stylesheet" href="../static/css/result.css">
+</head>
+
+<body>
+    <div class="info">
+        <div class="header">
+            <div class="content">
+                <h2>恭喜你获得"{{t_level}}"称号</h2>
+                <p>本次测试中，你答对了         道题，答错           道。</p>
+                <p>下面是答题详情，请查看</p>
+            </div>
+        </div>
+
+        <div class="container">
+            {% for dict in t_data %}
+            <div class="item">
+                <!-- 从题目字典中获取"题目信息" --> <!-- 标记题目正/误状态 -->
+                <h3>{{ loop.index }}、{{ dict['question'] }}               </h3>
+
+                <span>{{ dict['options'][0] }}</span>
+                <span>{{ dict['options'][1] }}</span>
+                <span>{{ dict['options'][2] }}</span>
+                <span>{{ dict['options'][3] }}</span>
+
+                <!-- 显示题目正确答案 -->
+                <p>正确答案是：{{ dict['answer'] }}</p>
+                <!-- 显示用户提交的选项-->
+                <p>您选择的是：                 </p>
+            </div>
+            <br>
+            {% endfor %}
+
+            <div class="btn">
+                <form action="/">
+                    <!-- 重新测评按钮 -->
+                    <input class="btn-sub" type="submit" value="重新评测">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

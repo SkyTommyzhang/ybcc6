@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入信息</title>
+    <link rel="stylesheet" href="../static/css/enter.css">
+</head>
+<body>
+    <div class="info">
+        <!--给form表单添加action属性，把提交数据的地址设置为"/card"-->
+        <form>
+            <h3 class="title">制作贺卡信息:</h3>
+
+            写信人:
+            <input type="text" name="send">
+            <br>
+
+            收信人:
+            <input type="text" name="receive">
+            <br>
+
+            祝福语:
+            <br>
+            <!--修改rows和cols的属性值；添加name属性，给多行文本框命名为"content"-->
+            <textarea rows="10" cols="20"></textarea>
+
+            <div class="button-container">
+                <input type="submit" value="提交">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>笑笑的测试</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+
+<body>
+    <div class="w">
+        <div class="header">
+            <h1>笑笑的题库</h1>
+
+            <h2>上知天文,下知地理,动动小手,重在参与。</h2>
+        </div>
+        <form action="/result" method="post">
+            <div class="container">
+                <!-- 模板for循环遍历题目列表 -->
+                {% for item in t_data %}
+                <div class="item">
+                    <!-- 从题目字典中获取"题干内容" -->
+                    <h3 class="topic">{{ loop.index }}、{{ item['question'] }}</h3>
+
+                    <div class="options">
+                        <!-- input标签设置选项按钮，依次显示题目选项内容 -->
+                        <input type="radio" name="{{ item['id'] }}" value="A" required>{{ item['options'][0] }}
+                        <input type="radio" name="{{ item['id'] }}" value="B" required>{{ item['options'][1] }}
+                        <input type="radio" name="{{ item['id'] }}" value="C" required>{{ item['options'][2] }}
+                        <input type="radio" name="{{ item['id'] }}" value="D" required>{{ item['options'][3] }}
+                    </div>
+                </div>
+                {% endfor %}
+                <br>
+
+                <div class="btn">
+                    <input type="submit" value="确认提交">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

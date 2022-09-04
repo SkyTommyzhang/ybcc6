@@ -1,0 +1,41 @@
+body {
+    /* 设置内容居中 */
+    text-align: center;
+}
+
+/* 类别名称：header */
+.header {
+    /* 设置背景图片 */
+    background-image: url(../images/bg1.png);
+}
+
+/* 类别名称：content */
+.content{
+    /* 设置背景图片 */
+    background-image: url(../images/bg2.png); 
+}
+
+/* 【我的生活】标题 */
+h2 {
+    color: LimeGreen;
+    font-size: 48px; 
+}
+
+/* 个性签名 */
+.intro {
+    /* 设置背景颜色 */
+    background-color: LimeGreen;
+    /* 设置透明度 */
+    /* opacity: 0.6; */
+    /* 设置文字大小 */
+    font-size: 28px;
+    /* 设置文字颜色 */
+    color: White;
+}
+
+/* 【我的生活】文字介绍 */
+.info {
+    font-size: 24px;
+    color: Black;
+}
+

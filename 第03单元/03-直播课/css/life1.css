@@ -1,0 +1,27 @@
+/* 【我的生活】标题 */
+h2 {
+    /* 设置文字颜色：LimeGreen */
+    color: LimeGreen
+    /* 设置文字大小：48px */
+    font-size: 48px
+}
+
+/* 为body标签设置居中样式 */
+body {
+    text-align: center;
+}
+
+/* 类别名称：header */
+header {
+    /* 设置背景图片 */
+    background-image: url(../images/bg1.png);
+    background-size: cover;
+}
+
+/* 类别名称：content */
+content {
+    /* 设置背景图片 */
+    background-image: url(../images/bg2.png); 
+    background-size: cover; 
+}
+
