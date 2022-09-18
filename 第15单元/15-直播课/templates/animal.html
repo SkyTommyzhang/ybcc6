@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>动物保护留言板</title>
+    <link rel="stylesheet" href="static/css/animal.css">
+</head>
+
+<body>
+    <div class="w">
+        <div class="container">
+            <form action="/submit" method="POST">
+                <!-- 表单：输入留言 -->
+                <div class="tablet">
+                    <!-- 头部栏 -->
+                    <div class="tablet-top">
+                        <span class="tablet-top-title">加入我们，为保护野生动物发生</span>
+                        <span class="animal-select">
+                            <select name="animal" required>
+                                <option value="panda">熊猫</option>
+                                <option value="elephant">大象</option>
+                                <option value="tiger">老虎</option>
+                            </select>
+                        </span>
+                    </div>
+                    <!-- 中间栏 -->
+                    <div class="tablet-middle">
+                        <textarea 
+                        class="tablet-middle-textarea"
+                        name="content"
+                        placeholder="写入你想表达的内容......（最多120字）" required></textarea>
+                    </div>
+                    <!-- 底部栏 -->
+                    <div class="tablet-bottom">
+                        <span class="author">
+                            <label for="name">
+                                <span>留言者：</span>
+                            </label>
+                            <input name="name" type="text" required>
+                        </span>
+                        <span class="tablet-bottom-placeholder-block"></span>
+                        <input type="submit" value="确认提交"
+                        class="submit-btn">
+                    </div>
+                </div>
+            </form>
+
+            <!-- 留言列表：展示所有留言数据 -->
+            <div class="list">
+                {% for item in t_datalist%}
+                <div class="list-item">
+                    <div class="list-item-top">
+                        <!-- 留言人 -->
+                        <span>{{item.name}}</span><span>:</span>
+                    </div>
+                    <div class="list-item-bottom">
+                        <div class="list-item-bottom-pic-container">
+                            <img class="list-item-bottom-pic" src="static/images/{{item.animal}}.png">
+                        </div>
+                        <div class="list-item-bottom-text">
+                            <!-- 留言内容 -->
+                            {{ item.content }}
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                {% endfor%}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

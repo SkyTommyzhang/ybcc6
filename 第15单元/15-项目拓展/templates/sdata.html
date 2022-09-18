@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息</title>
+    <link rel="stylesheet" href="../static/css/student.css">
+</head>
+<body>
+    <div class="button">
+        <a href="/">返回首页</a>
+    </div>
+    {% for dic in s_datalist %}
+        <div class="border">
+            <!-- 学生姓名 -->
+            <p>姓名：{{dic['name']}}</p>
+            <!-- 学生性别 -->
+            <p>性别：{{dic['gender']}}</p>
+            <!--学生年龄-->
+            <p>年龄：{{dic['age']}}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>

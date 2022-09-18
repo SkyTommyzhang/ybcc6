@@ -1,0 +1,14 @@
+.content{
+	margin:0 auto;
+	width:300px;
+}
+.border {
+    border: 1px Black solid;
+    margin: 0 auto;
+    padding: 8px;
+    width: 430px;
+    height: 130px;
+}
+.button{
+    text-align: center;
+}

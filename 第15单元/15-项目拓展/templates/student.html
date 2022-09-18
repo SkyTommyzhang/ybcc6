@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生管理系统</title>
+    <link rel="stylesheet" href="../static/css/student.css">
+</head>
+<body>
+    <div class="content">
+        <h1>学生管理系统</h1>
+        <h2>请录入新学生信息：</h2>
+        <form action="/submit" method="POST">
+            姓名：<input type="text" name="name">
+            <br>
+            性别：
+            <select name="gender">
+                <option value="男">男</option>
+                <option value="女">女</option>
+                <option value="其他">其他</option>
+            </select>
+            <br>
+            年龄：<input type="text" name="age">
+            <br>
+            <input type="submit" value="确认提交">
+        </form>
+        <a href="/sdata">查看学生信息</a>
+    </div>
+</body>
+</html>
