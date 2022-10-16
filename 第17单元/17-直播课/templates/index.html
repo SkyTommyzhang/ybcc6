@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任务管理</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+
+<body>
+    <div class="w">
+        <!-- 待完成任务 -->
+        <div class="container">
+            <div class="container-top">
+                待完成任务
+                <a href="/add">
+                    <div class="add-btn">+ 添加新任务</div>
+                </a>
+            </div>
+
+            {% for item in t_data %}
+                <!-- 模板if开始语句，判断state是否为'待完成' -->
+
+                    <div class="item">
+                        <div class="item-top">
+                            <span class="subject">{{ item['subject'] }}</span>
+                            <span class="time">{{ item['time'] }}</span>
+                        </div>
+                        <div class="item-bottom">
+                            {{ item['content'] }}
+                        </div>
+                    </div>
+                <!-- 模板if结束语句 -->
+
+            {% endfor %}
+        </div>
+
+        <!-- 已完成任务 -->
+        <div class="container">
+            <div class="container-top">已完成任务</div>
+            <!-- 解除注释：已完成任务区域需要展示已完成状态的任务 -->
+
+            <!--{% for item in t_data %}-->
+                <!--{% if item['state'] == '已完成' %}-->
+                    <!--<div class="item">-->
+                        <!--<div class="item-top">-->
+                            <!--<span class="subject">{{ item['subject'] }}</span>-->
+                            <!--<span class="time">{{ item['time'] }}</span>-->
+                        <!--</div>-->
+                        <!--<div class="item-bottom">-->
+                            <!--{{ item['content'] }}-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--{% endif %}-->
+            <!--{% endfor %}-->
+
+        </div>
+    </div>
+</body>
+
+</html>
