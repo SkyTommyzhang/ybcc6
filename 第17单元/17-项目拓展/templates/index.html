@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="../static/css/index.css">
     <title>日程规划表</title>
 </head>
+<body>
     <div class="w">
         <form action="/save" method="POST">
             <div class="container">
                 <div class="container-top">
-                    添加日程
+<!--                    添加日程-->
                     <div class="select-container">
                         <span class="select-title">选择分类</span>
                         <select name="category" class="select-menu">
@@ -63,7 +64,7 @@
             <!--for开始语句-->
             {% for item in t_data %}
                 <!--if开始语句 循环变量item中'category'键所对应的值为‘运动’时，条件为真-->
-
+                {% if item['category'] == '运动' %}
                     <div class="item">
                         <div class="item-top">
                             <!--展示保存在循环变量中的日程内容-->
@@ -71,7 +72,7 @@
                         </div>
                     </div>
                 <!--if 结束语句-->
-
+                {% endif %}
             <!--for结束语句-->
             {% endfor %}
         </div>
