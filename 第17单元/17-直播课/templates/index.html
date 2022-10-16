@@ -22,7 +22,7 @@
 
             {% for item in t_data %}
                 <!-- 模板if开始语句，判断state是否为'待完成' -->
-
+                {% if item['state'] == '待完成' %}
                     <div class="item">
                         <div class="item-top">
                             <span class="subject">{{ item['subject'] }}</span>
@@ -33,28 +33,28 @@
                         </div>
                     </div>
                 <!-- 模板if结束语句 -->
-
+                {% endif %}
             {% endfor %}
         </div>
 
         <!-- 已完成任务 -->
         <div class="container">
             <div class="container-top">已完成任务</div>
-            <!-- 解除注释：已完成任务区域需要展示已完成状态的任务 -->
+<!--             解除注释：已完成任务区域需要展示已完成状态的任务 -->
 
-            <!--{% for item in t_data %}-->
-                <!--{% if item['state'] == '已完成' %}-->
-                    <!--<div class="item">-->
-                        <!--<div class="item-top">-->
-                            <!--<span class="subject">{{ item['subject'] }}</span>-->
-                            <!--<span class="time">{{ item['time'] }}</span>-->
-                        <!--</div>-->
-                        <!--<div class="item-bottom">-->
-                            <!--{{ item['content'] }}-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--{% endif %}-->
-            <!--{% endfor %}-->
+            {% for item in t_data %}
+                {% if item['state'] == '已完成' %}
+                    <div class="item">
+                        <div class="item-top">
+                            <span class="subject">{{ item['subject'] }}</span>
+                            <span class="time">{{ item['time'] }}</span>
+                        </div>
+                        <div class="item-bottom">
+                            {{ item['content'] }}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
 
         </div>
     </div>

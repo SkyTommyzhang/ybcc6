@@ -55,7 +55,7 @@ def save():
     result = request.form
     data = result.to_dict()
     # 添加任务状态state为'待完成'
-    
+    data['state'] = '待完成'
     # 调用自定义功能get_time()设置任务时间
     data['time'] = get_time()
     # 使用insert_data()功能添加数据到数据库
