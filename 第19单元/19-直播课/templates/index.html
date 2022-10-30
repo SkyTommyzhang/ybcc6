@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任务管理</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+
+<body>
+    <div class="w">
+        <!-- 待完成任务 -->
+        <div class="container">
+            <div class="container-top">
+                待完成任务
+                <a href="/add">
+                    <div class="add-btn">+ 添加新任务</div>
+                </a>
+            </div>
+
+            {% for item in t_data %}
+                {% if item['state']=='待完成' %}
+                    <div class="item">
+                        <div class="item-top">
+                            <span class="subject">{{ item['subject'] }}</span>
+                            <span class="time">{{ item['time'] }}</span>
+                            <div class="item-op">
+                                <a href="/delete?_id={{ item['_id'] }}">
+                                    <span class="delete-btn">删除</span>
+                                </a>
+                                <a href="/finish?_id={{ item['_id'] }}">
+                                    <span class="finish-btn">完成</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item-bottom">
+                            {{ item['content'] }}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- 已完成任务 -->
+        <div class="container">
+            <div class="container-top">
+                已完成任务
+            </div>
+
+            {% for item in t_data%}
+                {% if item['state']=='已完成' %}
+                    <div class="item">
+                        <div class="item-top">
+                            <span class="subject">{{ item['subject'] }}</span>
+                            <span class="time">{{ item['time'] }}</span>
+                            <div class="item-op">
+                                <a href="/revoke?_id={{ item['_id'] }}">
+                                    <span class="delete-btn">撤销</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item-bottom">
+                            {{ item['content'] }}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
