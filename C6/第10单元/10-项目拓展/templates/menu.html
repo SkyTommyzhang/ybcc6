@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>壮猿大饭店</title>
+    <link rel="stylesheet" href="../static/css/menu.css">
+</head>
+
+<body>
+    <div class = "menu">
+        <h1>壮猿饭店</h1>
+        <br>
+        <!--模板变量t_menu-->
+        <!-- 模板for循环开始语句，遍历题目列表 -->
+        {% for i in t_menu %}
+        <div class="item">
+            <!--获取图片路径-->
+            <img src = {{i['src']}}>
+            <!--获取菜名-->
+            <h3>{{i['dish']}}</h3>
+            <!--获取价格-->
+            <p>价格：{{i['price']}}</p>
+        </div>
+        <!-- 模板for循环结束语句 -->
+        {%endfor%}
+    </div>
+</body>
+</html>

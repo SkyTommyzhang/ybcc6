@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科技问答</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+
+<body>
+    <div class="w">
+        <form action = "/result", method="POST">
+            <div class="container">
+
+            {% for item in t_data %}
+            <div class="question-item">
+                <div class="topic">{{ item['question'] }}</div>
+
+                <div class="options">
+                    <div>
+                        <label class="radios-label">
+                            <input type="radio" name="{{ item['id'] }}" value="A" required>
+                            <span class="radios"></span>
+                            <span>{{ item['options'][0] }}</span>
+
+                        </label>
+                    </div>
+                    <div>
+                        <label class="radios-label">
+                            <input type="radio" name="{{ item['id'] }}" value="B">
+                            <span class="radios"></span>
+                            <span>{{ item['options'][1] }}</span>
+
+                        </label>
+                    </div>
+                    <div>
+                        <label class="radios-label">
+                            <input type="radio" name="{{ item['id'] }}" value="C">
+                            <span class="radios"></span>
+                            <span>{{ item['options'][2] }}</span>
+
+                        </label>
+                    </div>
+                    <div>
+                        <label class="radios-label">
+                            <input type="radio" name="{{ item['id'] }}" value="D">
+                            <span class="radios"></span>
+                            <span>{{ item['options'][3] }}</span>
+
+                        </label>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="btn">
+                <input class="btn-sub" type="submit" value="确认提交">
+            </div>
+        </div>
+        </form>
+
+    </div>
+</body>
+
+</html>

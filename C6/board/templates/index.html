@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动物留言板</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+
+<body>
+    <div class="w">
+        <div class="container">
+            <form action="/board/submit" method="POST">
+                <!-- 输入板 -->
+                <div class="tablet">
+                    <!-- top -->
+                    <div class="tablet-top">
+                        <span class="tablet-top-title">加入我们，为保护野生动物发生</span>
+                        <span class="animal-select">
+                            <!-- <span>动物选择</span> -->
+                            <select id="animal" name="animal" required>
+                                <option value="所有动物" style="display:none" selected>动物选择</option>
+                                {% for item in t_options%}
+                                <option value="{{item}}">{{item}}</option>
+                                {% endfor%}
+                            </select>
+                        </span>
+                    </div>
+                    <!-- middle -->
+                    <div class="tablet-middle">
+                        <textarea class="tablet-middle-textarea" name="content" id="content"
+                            placeholder="写入你想表达的内容......（最多120字）" required></textarea>
+                    </div>
+                    <!-- bottom -->
+                    <div class="tablet-bottom">
+                        <span class="author">
+                            <label for="username">
+                                <span>留言者：</span>
+                            </label>
+                            <input id="username" name="username" type="text" required>
+
+                        </span>
+                        <span class="tablet-bottom-placeholder-block"></span>
+                        <button type="submit" id="btn" class="submit-btn">确认提交</button>
+                    </div>
+                </div>
+
+            </form>
+
+
+            <!-- 留言列表 -->
+            <div class="list">
+                {% for item in t_datalist%}
+                <!-- item start -->
+                <div class="list-item">
+                    <div class="list-item-top">
+                        <span>{{item.username}}</span><span>:</span>
+                        <span>我为{{item.animal}}发声</span>
+                    </div>
+                    <div class="list-item-bottom">
+                        <div class="list-item-bottom-pic-container">
+                            {% if item['animal'] == '猴子' %}
+                                <img class="list-item-bottom-pic" src="../static/images/monkey.png" alt="">
+                            {% elif item['animal'] == '老虎' %}
+                                <img class="list-item-bottom-pic" src="../static/images/tiger.png" alt="">
+                            {% elif item['animal'] == '熊猫' %}
+                                <img class="list-item-bottom-pic" src="../static/images/panda.png" alt="">
+                            {% elif item['animal'] == '大象' %}
+                                <img class="list-item-bottom-pic" src="../static/images/elephant.png" alt="">
+                            {% elif item['animal'] == '所有动物' %}
+                                <img class="list-item-bottom-pic" src="../static/images/all_animal.png" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="list-item-bottom-text">
+                            {{ item.content }}
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <!-- item end -->
+
+                {% endfor%}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+.wall-list-bottom-item {
+    width: 310px;
+    height: 279px;
+    display: inline-block;
+
+    background: #FFEA7C;
+    box-shadow: 0px 3px 10px rgba(134, 220, 239, 0.69);
+    border-radius: 20px;
+    padding-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.wall-list-bottom-item img {
+    width: 95%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.wall-list-bottom-item div {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 42px;
+
+    color: #7D3500;
+
+}

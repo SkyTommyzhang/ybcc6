@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加任务</title>
+    <link rel="stylesheet" href="../static/css/add.css">
+</head>
+
+<body>
+    <div class="w">
+        <div class="header">
+            <a href="/">
+                <div class="back">返回</div>
+            </a>
+        </div>
+        <form id="my-form" action="/save" method="post">
+            <div class="container">
+                <div class="container-top">
+                    <div class="select-container">
+                        <span class="select-title">科目</span>
+                        <select name="subject" id="subject">
+                            <option value="">选择科目</option>
+                            {% for item in t_subject %}
+                            <option value={{ item }}>{{ item }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="container-middle">
+                    <textarea id="content" name="content" placeholder="写入你想表达的内容......（最多30字）"></textarea>
+                </div>
+
+                <div class="container-bottom">
+                    <input type="submit" id="btn" class="submit-btn" value="确认提交">
+                </div>
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>

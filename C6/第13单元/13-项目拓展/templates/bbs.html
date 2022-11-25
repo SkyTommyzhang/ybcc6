@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>科技论坛</title>
+    <link rel="stylesheet" href="../static/css/base.css">
+</head>
+<body>
+    <h1>请输入您的发帖内容，并选择您想发送的板块</h1>
+    <form action="result" method="POST">
+        <!--设置文本域，用来输入留言内容-->
+        <textarea name="content" cols="50" rows="10" placeholder="写入你想表达的内容……（最多240字）" required></textarea>
+        <br>
+        <!--设置文本输入框，用来输入留言者昵称 数据名称为name-->
+        留言者：<input type="text" name = "name" >
+        <!-- 设置下拉菜单，数据名称为subject-->
+        选择板块：<select name = "subject">
+            <!--设置下拉菜单的选项，选择后的值分别为"物理""化学""生物"-->
+            <option value =   >物理</option>
+            <option value =   >化学</option>
+            <option value =   >生物</option>
+        </select>
+        <input type="submit" value = "提交">
+    </form>
+</body>
+</html>

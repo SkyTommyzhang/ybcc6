@@ -1,0 +1,56 @@
+body {
+    /* 设置内容居中 */
+    text-align: center;
+}
+
+.header {
+    background-image: url(../images/honer-bg1.png);
+
+}
+
+.back {
+
+    background-image: url(../images/back.png);
+}
+
+.head {
+    border: 4px solid Yellow;
+    border-radius: 40px;
+}
+
+
+.content {
+    background-image: url(../images/honer-bg2.png);
+
+}
+
+.name {
+    color: White;
+}
+
+.intro {
+    /* 以下两种讲解方式待定，目前倾向用第一种，可能需要提一下透明度 */
+    /* 1 颜色和透明分开使用 */
+    background-color: OrangeRed;
+    opacity: 0.6;
+    /* 2 颜色和透明复合使用 */
+    /* background-color: rgba(255,75,18, 0.6); */
+    font-size: 28px;
+    color: white;
+}
+
+.title {
+    color: OrangeRed;
+
+}
+
+.info {
+    font-size: 24px;
+}
+
+/* AI课用 */
+.pic {
+    border: 4px solid DarkOrange;
+    border-radius: 20px;
+
+}

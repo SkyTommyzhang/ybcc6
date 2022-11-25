@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.w {
+    width: 1440px;
+    background: #C1EE33 url(../images/result-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 100px;
+    min-height: 100vh;
+}
+
+.result-window-container {
+    text-align: center;
+}
+
+.result-window {
+    width: 787px;
+}
+
+.btn-container {
+    text-align: center;
+}
+
+.submit-btn {
+
+    width: 250px;
+    height: 58px;
+
+    font-size: 26px;
+    line-height: 58px;
+    color: #583013;
+    border: 0;
+
+    background: linear-gradient(180deg, #FCFF82 0%, #FFE920 52.6%, #FFC120 100%);
+    box-shadow: 0px 4px 20px rgba(42, 88, 255, 0.4);
+    border-radius: 100px;
+    text-align: center;
+
+
+
+}
+
+.submit-btn:hover {
+    background: linear-gradient(180deg, #eef07b 0%, #ecd81e 52.6%, #FFC120 100%);
+    box-shadow: 0px 4px 20px rgba(42, 88, 255, 0.4);
+}
+
+.submit-btn:active {
+    background: linear-gradient(180deg, #e0e274 0%, #dac71c 52.6%, #FFC120 100%);
+    box-shadow: 3px 3px 4px rgba(42, 88, 255, 0.4);
+}
+
+.btn-img {
+    display: inline-block;
+
+    vertical-align: middle;
+}
+
+.btn-text {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+
+.loop-icon {
+    width: 25px;
+    height: 22px;
+
+}
